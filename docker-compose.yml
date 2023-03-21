@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+ frontend:
+  container_name: ecommerce_client
+  build:
+   context: .
+   dockerfile: Dockerfile
+  volumes:
+    - '.:/app'
+    - '/app/node_modules'
+  ports:
+    - '5173:5173'
+  environment:
+    - WATCHPACK_POLLING=true
